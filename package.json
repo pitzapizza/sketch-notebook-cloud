@@ -1,16 +1,18 @@
 {
   "name": "sketch-notebook-cloud",
   "version": "1.0.0",
-  "main": "package.js",
+  "description": "Interactive whiteboard app with Tailwind, TypeScript, and Vite",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.14",

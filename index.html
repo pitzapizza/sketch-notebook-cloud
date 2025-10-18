@@ -2,32 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sketch Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sketch Notebook Cloud</title>
   <link rel="stylesheet" href="/styles/tailwind.css" />
 </head>
-<body class="bg-gradient-to-br from-indigo-100 to-purple-200 min-h-screen flex flex-col items-center justify-center font-sans">
-  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-4xl">
-    <h1 class="text-4xl font-bold text-center text-indigo-600 mb-6">🎨 Sketch Notebook</h1>
+<body class="bg-gradient-to-br from-indigo-100 to-purple-200 min-h-screen font-sans text-gray-800">
 
-    <div class="flex justify-center mb-6 gap-4">
-      <button id="clearBtn" class="px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200">
-        Clear
-      </button>
-      <button id="downloadBtn" class="px-5 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-200">
-        Download
-      </button>
-    </div>
-
-    <div class="flex justify-center">
-      <canvas
-        id="sketchCanvas"
-        class="border-8 border-indigo-500 rounded-xl shadow-lg bg-black"
-        width="800"
-        height="500"
-      ></canvas>
-    </div>
+  <!-- Toolbar -->
+  <div class="toolbar fixed top-0 left-0 right-0 z-20 flex flex-wrap items-center justify-center gap-4 p-4 bg-white shadow">
+    <label>Brush <input id="brushSize" type="range" min="1" max="50" value="8"></label>
+    <label>Color <input id="brushColor" type="color" value="#111827"></label>
+    <label>Eraser <input id="eraserSize" type="range" min="5" max="80" value="20"></label>
+    <label>Background
+      <select id="backgroundSelect" class="input">
+        <option value="plain">Plain</option>
+        <option value="ruled">Ruled</option>
+        <option value="graph">Graph</option>
+        <option value="dots">Dotted</option>
+      </select>
+    </label>
+    <input id="filename" type="text" placeholder="File name" class="input" />
+    <button id="penBtn" class="btn btn-blue">Pen</button>
+    <button id="eraserBtn" class="btn btn-yellow">Eraser</button>
+    <button id="undoBtn" class="btn btn-gray">Undo</button>
+    <button id="redoBtn" class="btn btn-gray">Redo</button>
+    <button id="clearBtn" class="btn btn-red">Clear</button>
+    <button id="downloadBtn" class="btn btn-green">Download</button>
   </div>
+
+  <!-- Canvases -->
+  <canvas id="backgroundCanvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+  <canvas id="sketchCanvas" class="absolute inset-0 w-full h-full z-10"></canvas>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
