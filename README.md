@@ -14,7 +14,7 @@ A lightweight, responsive sketch notebook built with **Vite**, **TypeScript**, a
 - **Frontend**: Vite + TypeScript + Tailwind CSS v4
 - **Build Tools**: PostCSS, Autoprefixer
 - **Deployment**: Azure Static Web Apps (GitHub Actions)
-- **Hosting**: [Live Site](https://ambitious-field-0dab54e00.3.azurestaticapps.net/)
+- **Hosting**: [Live Site](https://ambitious-field-0dab54e00.3.azurestaticapps.net/)    *closed*
 
 ## 📦 Setup Instructions
 
